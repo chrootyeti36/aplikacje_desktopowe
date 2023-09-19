@@ -1,0 +1,31 @@
+body{
+    display: grid;
+    margin: 0;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 90vh 10vh;
+    grid-template-areas: 
+    "menu main"
+    "menu foot";
+}
+div#menu{
+    background-color: cyan;
+    grid-area: menu;
+}
+div#main{
+    background-color: magenta;
+    grid-area: main;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+div#foot{
+    background-color: yellow;
+    grid-area: foot;
+}
+div#kw0{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border: 2px solid white;
+}
