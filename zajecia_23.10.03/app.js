@@ -4,7 +4,6 @@ function numbers(nazwa) {
     if (!cell.innerHTML) {
         document.getElementById(nazwa).innerHTML = licznik;
         licznik++;
-
         if (licznik % 2 == 0) {
             document.getElementById(nazwa).style.backgroundColor = "red";
         } else {
