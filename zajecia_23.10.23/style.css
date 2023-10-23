@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+
+#conteiner{
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(179, 179, 179);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+#interface{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(51, 51, 51);
+}
+
+.divKraj{
+    height: 100px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.divKrajFlaga{
+    height: 100%;
+    width: 200px;
+}
+
+img{
+    height: 100%;
+    width: 200px;
+}
+
+.divKrajInfo{
+    height: 100%;
+}
+
+.divKrajInfo h1{
+    margin:0;
+}
