@@ -6,7 +6,9 @@ async function getData() {
     console.log(json);
 
     for (let a = 0; a <= json.length - 1; a++) {
+        //tworzy element div
         const divKraj = document.createElement("div");
+        //dodaje klasę do stworzonego div'a
         divKraj.classList.add("divKraj");
         
         const divKrajFlaga = document.createElement("div");
@@ -15,12 +17,15 @@ async function getData() {
         const divKrajInfo = document.createElement("div");
         divKrajInfo.classList.add("divKrajInfo");
 
+        //tworzy element z obrazem
         const flaga = document.createElement("img");
+        //dodaje atrybut ze ścieżką do obrazu
         flaga.setAttribute("src", json[a].flags.png);
 
         const nazwa = document.createElement("h1");
         nazwa.innerHTML=json[a].name.common;
 
+        //tworzy akapit z stolicą i populacją oddzielone miękkim enterem
         const info = document.createElement("p")
         info.innerHTML="Stolica: "+json[a].capital+"<br>Populacja: "+json[a].population;
 
@@ -28,14 +33,16 @@ async function getData() {
 
 
 
-
+        //sekcja wstawiająca flagi
         divKrajFlaga.appendChild(flaga)
         divKraj.appendChild(divKrajFlaga);
 
+        //sekcja wstawiająca elementy do informacji o państwie
         divKrajInfo.appendChild(nazwa);
         divKrajInfo.appendChild(info);
         divKraj.appendChild(divKrajInfo);
 
+        //zamieszczenie na stronie - musi być na samym końcu
         document.getElementById("conteiner").appendChild(divKraj);
     }
 }
