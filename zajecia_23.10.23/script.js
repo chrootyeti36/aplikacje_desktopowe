@@ -10,7 +10,7 @@ async function getData() {
         const divKraj = document.createElement("div");
         //dodaje klasę do stworzonego div'a
         divKraj.classList.add("divKraj");
-        
+
         const divKrajFlaga = document.createElement("div");
         divKrajFlaga.classList.add("divKrajFlaga");
 
@@ -23,12 +23,11 @@ async function getData() {
         flaga.setAttribute("src", json[a].flags.png);
 
         const nazwa = document.createElement("h1");
-        nazwa.innerHTML=json[a].name.common;
+        nazwa.innerHTML = json[a].name.common;
 
         //tworzy akapit z stolicą i populacją oddzielone miękkim enterem
         const info = document.createElement("p")
-        info.innerHTML="Stolica: "+json[a].capital+"<br>Populacja: "+json[a].population;
-
+        info.innerHTML = "Stolica: " + json[a].capital + "<br>Populacja: " + json[a].population;
 
 
 
