@@ -1,0 +1,34 @@
+body{
+    margin:0;
+}
+#container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+.divKraj{
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+
+}
+.nazwa{
+    height: 50%;
+    font-size: 150%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stolica{
+    height: 50%;
+    font-size: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
