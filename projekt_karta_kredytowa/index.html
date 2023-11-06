@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karta płatnicza</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="inputSide">
+        <p>Numer karty:<br>
+            <input type="text" name="" id="number" onkeydown="showData()">
+        </p>
+        <p>Imię i nazwisko:<br>
+            <input type="text" name="" id="holder" onkeydown="showData()">
+        </p>
+        <p>Data ważności<br>
+            <input type="date" name="" id="exDate">
+        </p>
+        <p>Kod CVC:<br>
+            <input type="text" name="" id="cvc">
+        </p>
+        <p>Obraz<br>
+            <input type="file" name="" id="image">
+        </p>
+    </div>
+    <div id="cardSide">
+        <div id="card">
+            <div id="cardLogo"></div>
+            <div id="cardNumber"></div>
+            <div id="cardHolder"></div>
+            <div id="cardExDate"></div>
+            <div id="cardCVC"></div>
+        </div>
+    </div>
+
+</body>
+</html>
