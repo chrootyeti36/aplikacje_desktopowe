@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <title>Karta płatnicza</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
     <div id="inputSide">
         <p>Numer karty:<br>
-            <input type="text" name="" id="number" onkeydown="showData()">
+            <date-input></date-input>
+            <input 
+            type="text" 
+            name="number" 
+            id="number"
+            required
+            maxlength="25"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </p>
         <p>Imię i nazwisko:<br>
-            <input type="text" name="" id="holder" onkeydown="showData()">
+            <input 
+            type="text" 
+            name="holder" 
+            id="holder" 
+            maxlength="32"
+            onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key == ' '">
         </p>
         <p>Data ważności<br>
-            <input type="date" name="" id="exDate">
+            <input type="month" name="exDate" id="exDate">
         </p>
         <p>Kod CVC:<br>
-            <input type="text" name="" id="cvc">
+            <input 
+            type="text" 
+            name="cvc" 
+            id="CVC"
+            maxlength="3"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </p>
         <p>Obraz<br>
             <input type="file" name="" id="image">
@@ -27,12 +44,12 @@
     <div id="cardSide">
         <div id="card">
             <div id="cardLogo"></div>
-            <div id="cardNumber"></div>
-            <div id="cardHolder"></div>
-            <div id="cardExDate"></div>
-            <div id="cardCVC"></div>
+            <div id="cardNumber">#### #### #### ####</div>
+            <div id="cardHolder">IMIE NAZWISKO</div>
+            <div id="cardExDate">MM/RR</div>
+            <div id="cardCVC">CVC</div>
         </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
