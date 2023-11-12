@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Karta płatnicza</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <div id="inputSide">
         <p>Numer karty:<br>
             <date-input></date-input>
-            <input 
-            type="text" 
-            name="number" 
-            id="number"
-            required
-            maxlength="25"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input type="text" name="number" id="number" required maxlength="25"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </p>
         <p>Imię i nazwisko:<br>
-            <input 
-            type="text" 
-            name="holder" 
-            id="holder" 
-            maxlength="32"
-            onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key == ' '">
+            <input type="text" name="holder" id="holder" maxlength="32"
+                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key == ' '">
         </p>
         <p>Data ważności<br>
-            <input type="month" name="exDate" id="exDate">
+            <!-- <input type="month" name="exDate" id="exDate"> -->
+            <select name="exMonth" id="exMonth" onchange="expiryDate()"></select>
+            <select name="exYear" id="exYear" onchange="expiryDate()"></select>
         </p>
         <p>Kod CVC:<br>
-            <input 
-            type="text" 
-            name="cvc" 
-            id="CVC"
-            maxlength="3"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input type="text" name="cvc" id="CVC" maxlength="3"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </p>
         <p>Obraz<br>
-            <input type="file" name="" id="image">
+            <button onclick="cardBackgroundImg('url(cover/cover1.jpg)')">cover1</button>
+            <button onclick="cardBackgroundImg('url(cover/cover2.jpg)')">cover2</button>
+            <button onclick="cardBackgroundImg('url(cover/cover3.jpg)')">cover3</button>
+            <button onclick="cardBackgroundImg('url(cover/cover4.jpg)')">cover4</button>
+            <input type="color" name="color" id="cardColor">
         </p>
     </div>
     <div id="cardSide">
-        <div id="card">
-            <div id="cardLogo"></div>
-            <div id="cardNumber">#### #### #### ####</div>
-            <div id="cardHolder">IMIE NAZWISKO</div>
-            <div id="cardExDate">MM/RR</div>
-            <div id="cardCVC">CVC</div>
+        <div class="card">
+            <div class="cardFace cardFace--front">
+                <div id="cardLogo"></div>
+                <div id="cardNumber">#### #### #### ####</div>
+                <div id="cardHolder">IMIE NAZWISKO</div>
+                <div id="cardExDate">MM/RR</div>
+            </div>
+            <div class="cardFace cardFace--back">
+                <div id="cardCVC">CVC</div>
+            </div>
+
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

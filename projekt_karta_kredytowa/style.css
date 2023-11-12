@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     display: grid;
     width: 100%;
@@ -8,22 +8,49 @@ body{
     grid-template-areas: "inputSide cardSide";
 }
 
-#inputSide{
+#inputSide {
     grid-area: inputSide;
     border-right: 1px solid black;
 }
 
-#cardSide{
+#cardSide {
     grid-area: cardSide;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* 
-#card{
-    width: 856px;
-    height: 539.8px;
-    border:5px solid rgb(206, 188, 27);
+
+.card {
+    aspect-ratio: 856 / 539.8;
+    height: 50%;
+
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.cardFace {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    -webkit-backface-visibility: hidden;
+}
+
+.cardFace--front {
     background-color: rgb(83, 94, 189);
-    border-radius: 30px;
-} */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cardFace--back {
+    background-color: rgb(194, 199, 236);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg);
+}

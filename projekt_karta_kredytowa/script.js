@@ -1,7 +1,9 @@
 //zmienne z formularza
 const number = document.querySelector("#number");
 const holder = document.querySelector("#holder");
-const exDate = document.querySelector("#exDate");
+// const exDate = document.querySelector("#exDate");
+const exMonth = document.querySelector("#exMonth");
+const exYear = document.querySelector("#exYear");
 const CVC = document.querySelector("#CVC");
 
 //dane wyświetlane na karcie 
@@ -39,10 +41,9 @@ holder.addEventListener("keyup", (e) => {
     }
 })
 
-exDate.addEventListener("keyup", (e) => {
-    const input = e.target.value.replace("/","");
-    console.log(exDate.value);
-})
+// exMonth.addEventListener("change", (e) => {
+//     console.log(exYear);
+// })
 
 CVC.addEventListener("keyup", (e) => {
     if (!e.target.value) {
@@ -51,3 +52,55 @@ CVC.addEventListener("keyup", (e) => {
         cardCVC.innerHTML = e.target.value;
     }
 })
+
+function cardBackgroundImg(cover){
+    document.querySelector(".cardFace--front").style.backgroundColor=""
+    document.querySelector(".cardFace--front").style.backgroundImage=cover
+}
+
+document.querySelector("#cardColor").addEventListener("change",(e)=>{
+    document.querySelector(".cardFace--front").style.backgroundImage=""
+    document.querySelector(".cardFace--front").style.backgroundColor=e.target.value
+})
+
+document.querySelector(".card").addEventListener('click',function(){
+    document.querySelector(".card").classList.toggle('is-flipped');
+})
+
+function expiryDate() {
+    if (exMonth.value.length < 2) {
+        cardExMonth = "0" + String(exMonth.value)
+    } else {
+        cardExMonth = String(exMonth.value);
+    }
+    cardExYear = exYear.value;
+    cardExDate.innerHTML = cardExMonth + "/" + cardExYear;
+    console.log(cardExDate)
+}
+
+function generateMonth() {
+
+    for (let i = 1; i <= 12; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = i;
+        exMonth.appendChild(option)
+    }
+}
+
+function generateYear() {
+    var today = new Date().getFullYear();
+    var lastTwo = String(today).slice(-2)
+    var year = Number(lastTwo);
+    console.log(year);
+
+    for (let i = year; i <= year + 11; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = i;
+        exYear.appendChild(option);
+    }
+}
+
+generateMonth();
+generateYear();
