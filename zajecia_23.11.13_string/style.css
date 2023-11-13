@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* gap: 10px; */
+}
+
+.zadania {
+    margin: 10px;
+    border: 1px solid black;
+    width: 25%;
+    height: 200px;
+    padding: 10px;
+}
