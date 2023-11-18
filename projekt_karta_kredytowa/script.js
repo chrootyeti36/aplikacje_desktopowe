@@ -48,14 +48,18 @@ CVC.addEventListener("keyup", (e) => {
     }
 })
 
-function cardBackgroundImg(cover) {
+function cardBackgroundImg(cover,color) {
     document.querySelector(".cardFace--front").style.backgroundColor = ""
+    document.querySelector(".cardFace--back").style.backgroundColor = ""
     document.querySelector(".cardFace--front").style.backgroundImage = cover
+    document.querySelector(".cardFace--back").style.backgroundColor = color
 }
 
 document.querySelector("#cardColor").addEventListener('change', (e) => {
     document.querySelector(".cardFace--front").style.backgroundImage = ""
+    document.querySelector(".cardFace--back").style.backgroundColor = ""
     document.querySelector(".cardFace--front").style.backgroundColor = e.target.value
+    document.querySelector(".cardFace--back").style.backgroundColor = e.target.value
 })
 
 document.querySelector(".card").addEventListener('click', function () {

@@ -12,13 +12,11 @@
     <div id="inputSide">
         <p>Numer karty:<br>
             <date-input></date-input>
-            <input type="text" name="number" id="number" required maxlength="25"
-                placeholder="####-####-####-####"
+            <input type="text" name="number" id="number" required maxlength="25" placeholder="####-####-####-####"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </p>
         <p>Imię i nazwisko:<br>
-            <input type="text" name="holder" id="holder" maxlength="32"
-                placeholder="IMIE NAZWISKO"
+            <input type="text" name="holder" id="holder" maxlength="32" placeholder="IMIE NAZWISKO"
                 onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key == ' '">
         </p>
         <p>Data ważności<br>
@@ -27,33 +25,43 @@
             <select name="exYear" id="exYear" onchange="expiryDate()"></select> -->
         </p>
         <p>Kod CVC:<br>
-            <input type="text" name="cvc" id="CVC" maxlength="3"
-                placeholder="CVC"
+            <input type="text" name="cvc" id="CVC" maxlength="3" placeholder="CVC"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </p>
         <p>Obraz<br>
-            <div id="chooseBackground">
-                <button onclick="cardBackgroundImg('url(cover/cover1.jpg)')"><img src="cover/cover1.jpg" alt="cover1"></button>
-                <button onclick="cardBackgroundImg('url(cover/cover2.jpg)')"><img src="cover/cover2.jpg" alt="cover2"></button>
-                <button onclick="cardBackgroundImg('url(cover/cover3.jpg)')"><img src="cover/cover3.jpg" alt="cover3"></button>
-                <button onclick="cardBackgroundImg('url(cover/cover4.jpg)')"><img src="cover/cover4.jpg" alt="cover4"></button>
-                
-            </div>
+        <div id="chooseBackground">
+            <button onclick="cardBackgroundImg('url(cover/cover1.jpg)','#8bd0f2')"><img src="cover/cover1.jpg"
+                    alt="cover1"></button>
+            <button onclick="cardBackgroundImg('url(cover/cover2.jpg)','#fc3a57')"><img src="cover/cover2.jpg"
+                    alt="cover2"></button>
+            <button onclick="cardBackgroundImg('url(cover/cover3.jpg)','#a6c266')"><img src="cover/cover3.jpg"
+                    alt="cover3"></button>
+            <button onclick="cardBackgroundImg('url(cover/cover4.jpg)','#80255c')"><img src="cover/cover4.jpg"
+                    alt="cover4"></button>
+
+        </div>
         </p>
         <p>Wybierz własny kolor<br>
-            <input type="color" name="color" id="cardColor">
+            <div id="chooseColor">
+                <input type="color" name="color" id="cardColor">
+            </div>
         </p>
     </div>
     <div id="cardSide">
         <div class="card">
             <div class="cardFace cardFace--front">
-                <div id="cardLogo"></div>
+                <div id="cardChip"><img src="card/card_chip.png" alt="chip"></div>
+                <div id="contactless"><img src="card/contactless.png" alt="contactless"></div>
                 <div id="cardNumber">#### #### #### ####</div>
-                <div id="cardHolder">IMIE NAZWISKO</div>
                 <div id="cardExDate">MM/RR</div>
+                <div id="cardHolder">IMIE NAZWISKO</div>
+                <div id="cardLogo"><img src="card/master_card_logo.png" alt="mastercard"></div>
             </div>
             <div class="cardFace cardFace--back">
-                <div id="cardCVC">CVC</div>
+                <div id="magneticLine"></div>
+                <div id="cardCVCLine">
+                    CVC→<div id="cardCVC">CVC</div>
+                </div>
             </div>
 
         </div>
