@@ -1,4 +1,5 @@
 const reduta = "Nam strzelać nie kazano. — Wstąpiłem na działo I spojrzałem na pole; dwieście armat grzmiało. Artyleryji ruskiéj ciągną się szeregi, Prosto, długo, daleko, jako morza brzegi; I widziałem ich wodza; — przybiegł, mieczem skinął I jak ptak jedno skrzydło wojska swego zwinął. Wylewa się spod skrzydła ściśniona piechota Długą, czarną kolumną, jako lawa błota, Nasypana iskrami bagnetów. Jak sępy, Czarne chorągwie na śmierć prowadzą zastępy."
+// const reduta = "nie nie nie reduta";
 
 function zad1() {
     const text = document.querySelector("#inp1");
@@ -25,6 +26,11 @@ function zad4() {
 }
 
 function zad5() {
-    const text = document.querySelector("#inp5");
+    const text = document.querySelector("#inp5").value;
+    var operationalReduta = reduta;
+    var textRegexp = new RegExp(text,'g')
+    console.log(operationalReduta.match(textRegexp))
+    var searchArray = operationalReduta.match(textRegexp)
+    document.querySelector("#wynik5").innerHTML = "Wyraz występuje: "+searchArray.length;
     // skrypt wyszukujący ile razy w tekście występuje dany wyraz
 }
