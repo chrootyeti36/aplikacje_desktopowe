@@ -1,0 +1,57 @@
+#kontener {
+    margin: auto;
+    font-family: Helvetica, sans-serif;
+    background-color: linen;
+    color: #222;
+    width: 90%;
+}
+
+#bannerKontener{
+    display: flex;
+}
+
+#bannerTytul,#bannerLink {
+    background-color: black;
+    color: white;
+    width: 50%;
+    height: 100px;
+}
+
+#glowny table{
+    margin: 40px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+td{
+    padding: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+a{
+    color: #aaa;
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
+}
+
+li{
+    list-style: none;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: 1px solid white;
+    display: inline-block;
+}
+
+img{
+    height: 75px;
+    width: 500px;
+}
