@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="styl2.css">
 </head>
+
 <body>
     <div id="left">
-        <div id="header">
-            <a href="index.html"><h2>SALON FRYZJERSKI</h2></a>
+        <div id="l1">
+            <a href="index.html">
+                <h2>SALON FRYZJERSKI</h2>
+            </a>
             <img src="obraz2.jpg" alt="Czesanie">
+        </div>
+        <div id="l2">
+            <h3>Dziś promocja na strzyżenie włosów</h3>
+            <input type="radio" id="krotkie">Krótkie<br>
+            <input type="radio" id="srednie">Średnie<br>
+            <input type="radio" id="poldlugie">Półdługie<br>
+            <input type="radio" id="dlugie">Długie<br>
+            <button onclick="showPrice()">Odkryj promocję</button>
+            <div id="output"></div>
         </div>
     </div>
     <div id="right">
@@ -30,7 +43,29 @@
                 <li>Koloryzacja</li>
             </ol>
         </div>
+        <div id="r3">
+            <img src="obraz1.jpg" alt="Fryzjer">
+        </div>
     </div>
-    <div id="stopka"></div>
+    <div id="stopka">
+        <p>Autor: 04262400000</p>
+    </div>
+    <script>
+        function showPrice() {
+            var cena = 0;
+            if(document.querySelector('#krotkie').checked){
+                cena = 25
+            } else if(document.querySelector('#srednie').checked){
+                cena = 30
+            } else if(document.querySelector('#poldlugie').checked){
+                cena = 40
+            } else if(document.querySelector('#dlugie').checked){
+                cena = 50
+            } 
+            console.log(cena);
+            document.querySelector('#output').innerHTML = 'Cena strzyżenia: '+cena;
+        }
+    </script>
 </body>
+
 </html>
